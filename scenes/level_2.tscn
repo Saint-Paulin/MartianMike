@@ -1,0 +1,39 @@
+[gd_scene load_steps=11 format=3 uid="uid://bv2a8e344s4vq"]
+
+[ext_resource type="PackedScene" uid="uid://djalaqkmcp2rk" path="res://scenes/player.tscn" id="1_3bmlt"]
+[ext_resource type="Script" uid="uid://d2xp1adrgxmmu" path="res://scripts/level.gd" id="1_y0kc7"]
+[ext_resource type="PackedScene" uid="uid://cvowkjyipfeho" path="res://scenes/level_3.tscn" id="2_6cvei"]
+[ext_resource type="PackedScene" uid="uid://crc7v7gjw7tpl" path="res://scenes/exit.tscn" id="2_ne2mo"]
+[ext_resource type="PackedScene" uid="uid://b7yp3vfdwavvf" path="res://scenes/start.tscn" id="3_6cvei"]
+[ext_resource type="PackedScene" uid="uid://bfbadq1ghm2kh" path="res://scenes/bg.tscn" id="4_que50"]
+[ext_resource type="Texture2D" uid="uid://bovfoprdjgs6b" path="res://assets/textures/bg/Yellow.png" id="5_ne2mo"]
+[ext_resource type="PackedScene" uid="uid://d1thm0ge67gdm" path="res://scenes/ui_layer.tscn" id="5_que50"]
+[ext_resource type="PackedScene" uid="uid://dw6i4e2u348mq" path="res://scenes/tile_map.tscn" id="6_hey2k"]
+[ext_resource type="PackedScene" uid="uid://dhan828krd0n1" path="res://scenes/deathzone.tscn" id="7_172wr"]
+
+[node name="Level_2" type="Node2D"]
+script = ExtResource("1_y0kc7")
+next_level = ExtResource("2_6cvei")
+
+[node name="BG" parent="." instance=ExtResource("4_que50")]
+bg_texture = ExtResource("5_ne2mo")
+
+[node name="UILayer" parent="." instance=ExtResource("5_que50")]
+
+[node name="Exit" parent="." instance=ExtResource("2_ne2mo")]
+position = Vector2(258, 160)
+
+[node name="Start" parent="." instance=ExtResource("3_6cvei")]
+position = Vector2(-62, 161)
+
+[node name="TileMap" parent="." instance=ExtResource("6_hey2k")]
+layer_0/tile_data = PackedInt32Array(917498, 393216, 1, 983034, 393216, 1, 1048570, 393216, 2, 917499, 458752, 1, 983035, 458752, 1, 1048571, 458752, 2, 917500, 458752, 1, 983036, 458752, 1, 1048572, 458752, 2, 917501, 458752, 1, 983037, 458752, 1, 1048573, 458752, 2, 917502, 458752, 1, 983038, 458752, 1, 1048574, 458752, 2, 917503, 458752, 1, 983039, 458752, 1, 1048575, 458752, 2, 851968, 458752, 1, 917504, 458752, 1, 983040, 458752, 2, 851969, 458752, 1, 917505, 458752, 1, 983041, 458752, 2, 851970, 458752, 1, 917506, 458752, 1, 983042, 458752, 2, 851971, 458752, 1, 917507, 458752, 1, 983043, 458752, 2, 851972, 458752, 1, 917508, 458752, 1, 983044, 458752, 2, 851973, 458752, 1, 917509, 458752, 1, 983045, 458752, 2, 983046, 458752, 2, 983047, 458752, 2, 983048, 524288, 2, 983058, 524288, 2, 917522, 524288, 1, 851986, 524288, 1, 983057, 458752, 2, 917521, 458752, 1, 851985, 458752, 1, 983056, 458752, 2, 917520, 458752, 1, 851984, 458752, 1, 983055, 458752, 2, 917519, 458752, 1, 851983, 458752, 1, 983054, 458752, 2, 917518, 458752, 1, 851982, 458752, 1, 983053, 393216, 2, 917517, 393216, 1, 851981, 393216, 1, 786450, 524288, 0, 786449, 458752, 0, 786448, 458752, 0, 786447, 458752, 0, 786446, 458752, 0, 786445, 393216, 0, 786437, 458752, 0, 786436, 458752, 0, 786435, 458752, 0, 786434, 458752, 0, 786433, 458752, 0, 786432, 458752, 0, 851967, 458752, 0, 851966, 458752, 0, 851965, 458752, 0, 851964, 458752, 0, 851963, 458752, 0, 851962, 393216, 0, 917512, 524288, 1, 851976, 524288, 1, 786440, 524288, 0, 917511, 458752, 1, 851975, 458752, 1, 786439, 458752, 0, 917510, 458752, 1, 851974, 458752, 1, 786438, 458752, 0)
+
+[node name="Deathzone" parent="." instance=ExtResource("7_172wr")]
+position = Vector2(228, 287)
+
+[node name="Player" parent="." instance=ExtResource("1_3bmlt")]
+
+[node name="Objects" type="Node2D" parent="."]
+
+[node name="Traps" type="Node2D" parent="."]
