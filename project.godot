@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Martian Mike"
+config/tags=PackedStringArray("learning")
 run/main_scene="uid://dw5i8kylddfu1"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
